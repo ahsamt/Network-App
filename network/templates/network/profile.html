@@ -1,0 +1,20 @@
+<!-- prettier-ignore -->
+{% extends "network/layout.html" %} 
+{% block body %}
+<h1>{{ userToView }}</h1>
+
+{% if user.is_authenticated and user.username != userToView %}
+<a href="{%  url 'follow'  userToView %}" class="follow">{{ buttonText }}</a> <br /><br />
+{% endif %}
+
+<div class="profile-info">
+  <div>Followers: <span class="following">{{ numFollowers }}</span></div>
+  <div>Following: <span class="following">{{ numFollowing }}</span></div>
+  <h3 class="mt-5">All {{ userToView }}'s posts:</h3>
+</div>
+
+<br />
+<!-- prettier-ignore -->
+{% include "network/posts.html" with posts=posts %}
+{% include "network/pagination.html" with posts=posts %}
+{% endblock %}

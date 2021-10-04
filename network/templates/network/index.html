@@ -1,0 +1,19 @@
+<!-- prettier-ignore -->
+{% extends "network/layout.html" %}
+{% block body %}
+<h1>All Posts</h1>
+
+{% if user.is_authenticated %}
+<form class="new-post-form" action="" method="post">
+  {% csrf_token %}
+  <h3>New Post:</h3>
+  {{ postForm.content }}
+  <br />
+  <button type="submit">Post</button>
+</form>
+{% endif %}
+<br />
+<!-- prettier-ignore -->
+{% include "network/posts.html" with posts=posts %}
+{% include "network/pagination.html" with posts=posts %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "network/layout.html" %} {% block body %}
+<h2>Posts by the users you are following:</h2>
+<br />
+<!-- prettier-ignore -->
+{% if posts %} 
+{% include "network/posts.html" with posts=posts %}
+{% include "network/pagination.html" with posts=posts %}
+{% else %}
+<p>Sorry, it looks like you are not following any users!</p>
+<!-- prettier-ignore -->
+{% endif %}
+{% endblock %}

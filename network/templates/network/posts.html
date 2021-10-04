@@ -1,0 +1,37 @@
+{% for post in posts %}
+<div class="post-section" id="postBlock{{ post.id }}">
+  <a class="author" href="/{{ post.author }}">{{ post.author }}</a>
+  <div id="postContent{{ post.id }}">{{ post.content }}</div>
+  <div class="date">{{ post.date }}</div>
+
+  {% if user.is_authenticated %} {% if user in post.likedBy.all %}
+  <a href="/" class="like" data-postId="{{ post.id }}">❤️</a>
+  {% else %}
+  <a href="/" class="like" data-postId="{{ post.id }}">♡</a>
+  {% endif %} {% else %}
+  <a href="/" class="loginToLike">♡</a>
+  {% endif %}
+
+  <span class="num-likes" id="postLikes{{ post.id }}"> {{ post.likedBy.all|length }}</span>
+  {% if user == post.author %}
+  <br />
+  <div class="mt-2">
+    <a href="/" class="edit" data-postId="{{ post.id }}">Edit</a>
+    <a href="/" class="delete" data-postId="{{ post.id }}">Delete</a>
+  </div>
+  {% endif %}
+</div>
+
+{% if user == post.author %}
+
+<form class="edit_form" id="editPost{{ post.id }}" data-postId="{{ post.id }}">
+  <div class="form-group">
+    <textarea class="edit_content form-control" id="editContent{{ post.id }}" rows="7">{{post.content}}</textarea>
+    <button id="editButton" type="submit">Update post</button>
+  </div>
+</form>
+
+{% endif %}
+<br />
+<br />
+{% endfor %}
