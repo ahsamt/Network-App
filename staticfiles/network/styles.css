@@ -1,0 +1,151 @@
+:root {
+  --background-gradient: linear-gradient(111.5deg, rgb(181, 201, 242) 11.1%, rgb(118, 153, 201) 107.5%);
+  --grey-navbar-color: #c4c3d0;
+  --headings-color: #123456;
+  --red-text-color: #f21909;
+}
+
+body {
+  background: var(--background-gradient);
+  font-family: "Kalam", cursive;
+  font-size: 20px;
+}
+
+h1,
+h2 {
+  padding: 40px 0;
+  color: var(--headings-color);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 27px;
+  font-weight: bolder;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 650;
+  padding-bottom: 10px;
+  color: var(--red-text-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea,
+.edit_content,
+input {
+  outline: none;
+  border-radius: 15px;
+  width: 450px;
+}
+
+button,
+.edit,
+.delete {
+  transition: ease-in-out 200ms;
+  border-radius: 4px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+button,
+#loginButton {
+  background-color: var(--grey-navbar-color);
+  margin: 10px 0 20px 0;
+  padding: 2px 11px;
+}
+
+button:hover,
+#loginButton:hover {
+  background-color: #255484;
+  color: white;
+}
+
+.container {
+  margin-left: 80px;
+}
+
+.navbar {
+  background: var(--grey-navbar-color);
+  padding: 5px 15px 5px 100px;
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--headings-color);
+}
+
+.nav-link {
+  margin: 0px 30px;
+}
+
+.post-section {
+  width: 800px;
+  background-color: #f9eede;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.author {
+  color: var(--headings-color);
+  font-size: 24px;
+  font-weight: bold;
+  transition: ease-in-out 200ms;
+}
+
+.author:hover {
+  color: var(--red-text-color);
+}
+
+.edit,
+.delete {
+  background-color: #abaaaf;
+  color: white;
+  padding: 2px 7px;
+  font-size: smaller;
+}
+
+.edit:hover,
+.delete:hover {
+  background-color: white;
+  color: var(--headings-color);
+}
+
+.edit_content {
+  height: 300px;
+}
+
+.following {
+  color: var(--red-text-color);
+  font-weight: bold;
+}
+
+.profile-info {
+  font-size: 22px;
+}
+
+.date {
+  margin: 5px;
+  font-size: 18px;
+  opacity: 0.8;
+  font-weight: bolder;
+  color: var(--headings-color);
+}
+
+.page-link {
+  padding: 5px 15px;
+  margin: 3px;
+  color: var(--headings-color);
+  opacity: 0.8;
+  background-color: #f9eede;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
